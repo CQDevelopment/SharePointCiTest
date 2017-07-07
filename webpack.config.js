@@ -13,6 +13,11 @@ module.exports = [{
 			}, {
 				loader: "sass-loader"
 			}]
+		}, {
+			test: /\.jsx$/,
+			use: [{
+				loader: "babel-loader"
+			}]
 		}]
 	},
 	devtool: 'source-map'

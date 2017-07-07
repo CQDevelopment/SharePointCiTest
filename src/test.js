@@ -1,12 +1,12 @@
 import assert from 'assert'
-import app from './app.js'
+import data from './data.js'
 
-var app_instance = new app();
+var data_instance = new data();
 
 describe('App', function() {
 	describe('#doAddition', function() {
 		it('should return 4 if passed 1 and 3', function() {
-			assert.equal(4, app_instance.doAddition(1, 3));
+			assert.equal(4, data_instance.doAddition(1, 3));
 		});
 	});
 });

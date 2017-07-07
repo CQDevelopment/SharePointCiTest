@@ -1,3 +1,3 @@
 require('./style.scss')
 
-import App from './app.js'
+import app from './app.js'
