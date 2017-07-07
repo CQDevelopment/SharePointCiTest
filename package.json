@@ -5,7 +5,8 @@
   "main": "",
   "scripts": {
     "webpack": "webpack",
-    "test": "webpack && mocha ./out/test.js --colors --reporter mocha-jenkins-reporter"
+    "test": "webpack && mocha ./out/test.js",
+    "citest": "webpack && mocha ./out/test.js --no-colors"
   },
   "repository": {
     "type": "git",
