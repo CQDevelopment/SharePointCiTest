@@ -14,7 +14,7 @@ module.exports = [{
 				loader: "sass-loader"
 			}]
 		}, {
-			test: /\.jsx$/,
+			test: /\.js.$/,
 			use: [{
 				loader: "babel-loader"
 			}]
