@@ -1,3 +1,27 @@
 .cq-comp {
 	
 }
+
+.cq-comp .cq-header {
+	font-size: 120%;
+    font-weight: bold;
+    background-color: #0072c6;
+    padding: 10px;
+    color: #fff; 
+}
+
+.cq-comp .cq-content {
+	padding: 10px;
+    background-color: #92c0e0;
+}
+
+.cq-comp-search input {
+	width: 100%;
+    box-sizing: border-box;
+    height: 35px;
+	font-size: 120%;
+}
+
+.cq-comp-search .cq-comp-search-results div {
+	padding: 5px;
+}

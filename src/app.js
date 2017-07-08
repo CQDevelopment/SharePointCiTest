@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import Test from './components/testComponent.jsx'
+import Search from './components/search.jsx'
+
 import {
 	data
 } from './data.js'
-import Test from './components/testComponent.jsx'
 
 export default class App {
 	constructor(documentObject) {
@@ -14,6 +16,7 @@ export default class App {
 
 		self.components = {};
 		self.components.testComponent = Test;
+		self.components.search = Search;
 
 		self.process = () => {
 			var elements = self.document.querySelectorAll('[data-cq]');
@@ -22,7 +25,9 @@ export default class App {
 				var config = eval('(' + element.attributes['data-cq'].value + ')');
 				var component = self.components[config.name];
 
-				ReactDOM.render(React.createElement(component), element);
+				ReactDOM.render(React.createElement(component, {
+					data: data
+				}), element);
 			});
 		};
 	}
