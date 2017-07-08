@@ -5,11 +5,18 @@ import Test from './components/testComponent.jsx'
 
 export default class App {
 	constructor(props) {
-		this.components = {};
-		this.components.testComponent = Test;
+		var self = this;
 
-		this.render = function(name, target) {
-			ReactDOM.render(this.components[name], document.getElementById(target));
-		};
+		self.components = {};
+		self.components.testComponent = Test;
+
+		var elements = document.querySelectorAll('[data-cq]');
+
+		elements.forEach((element) => {
+			var config = eval('(' + element.attributes['data-cq'].value + ')');
+			var component = self.components[config.name];
+
+			ReactDOM.render(component, element);
+		});
 	}
 }
