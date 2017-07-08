@@ -1,6 +1,11 @@
 import assert from 'assert'
 import App from './app.js'
-import { document } from './mocks.js'
+import {
+	mock_document,
+	mock_jquery
+} from './mocks.js'
+
+let app = new App(mock_document, mock_jquery);
 
 /*
 var data_instance = new data();
@@ -12,5 +17,3 @@ describe('App', function() {
 		});
 	});
 });*/
-
-let app = new App(document);

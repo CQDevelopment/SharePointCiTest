@@ -43,8 +43,10 @@ export default class Search extends React.Component {
 					<div className="cq-comp-search-results">
 						{
 							this.state.results.results.map(
-								(result) => {
-									return <div><a href={result.Path}>{result.Title}</a></div>;
+								(result, index) => {
+									return <div key={index}>
+										<a href={result.Path}>{result.Title}</a>
+									</div>;
 								}
 							) 
 						}

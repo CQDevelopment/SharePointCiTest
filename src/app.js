@@ -4,15 +4,15 @@ import ReactDOM from 'react-dom'
 import Test from './components/testComponent.jsx'
 import Search from './components/search.jsx'
 
-import {
-	data
-} from './data.js'
+import Data from './data.js'
 
 export default class App {
-	constructor(documentObject) {
+	constructor(documentObject, jquery) {
 		var self = this;
 
 		self.document = documentObject;
+		self.jquery = jquery;
+		self.data = new Data(self.jquery);
 
 		self.components = {};
 		self.components.testComponent = Test;
@@ -26,7 +26,7 @@ export default class App {
 				var component = self.components[config.name];
 
 				ReactDOM.render(React.createElement(component, {
-					data: data
+					data: self.data
 				}), element);
 			});
 		};

@@ -1,11 +1,12 @@
-let $ = require('jquery')
-
-class Data {
-	constructor() {
-
+export default class Data {
+	constructor(jquery) {
+		let self = this;
+		self.$ = jquery;
 	}
 
 	getSearchResults(query, callback) {
+		let self = this;
+
 		let request = {
 			request: {
 				Querytext: query,
@@ -13,7 +14,7 @@ class Data {
 			}
 		};
 
-		$.ajax({
+		self.$.ajax({
 			url: '/_api/search/postquery',
 			type: 'POST',
 			headers: {
@@ -24,13 +25,23 @@ class Data {
 			cache: false,
 			contentType: 'application/json',
 			success: (data) => {
-				let relevantResults = data.d.postquery.PrimaryQueryResult.RelevantResults;
-
 				let response = {
-					count: relevantResults.RowCount,
-					totalCount: relevantResults.TotalRows,
+					count: 0,
+					totalCount: 0,
 					results: []
 				};
+
+				if (!data.d.postquery.PrimaryQueryResult) {
+					callback(response);
+					return;
+				}
+
+				let relevantResults = data.d.postquery.PrimaryQueryResult.RelevantResults;
+
+				Object.assign(response, {
+					count: relevantResults.RowCount,
+					totalCount: relevantResults.TotalRows
+				});
 
 				relevantResults.Table.Rows.results.forEach(
 					(rawResult) => {
@@ -51,10 +62,4 @@ class Data {
 			}
 		});
 	}
-}
-
-let instance = new Data();
-
-export {
-	instance as data
 }

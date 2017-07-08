@@ -1,5 +1,5 @@
-class Document {
-	constructor(){
+class MockDocument {
+	constructor() {
 		var self = this;
 
 		self.querySelectorAll = function(query) {
@@ -8,6 +8,17 @@ class Document {
 	}
 }
 
-let instance = new Document();
+let mock_document = new MockDocument();
 
-export { instance as document }
+class MockJquery {
+	constructor() {
+		var self = this;
+	}
+}
+
+let mock_jquery = new MockJquery();
+
+export {
+	mock_document,
+	mock_jquery
+}
