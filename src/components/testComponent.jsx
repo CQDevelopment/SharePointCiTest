@@ -7,7 +7,7 @@ export default class TestComponent extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="cq-comp">
 				<p>Test component content.</p>
 			</div>
 		);
