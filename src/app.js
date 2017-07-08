@@ -16,7 +16,7 @@ export default class App {
 			var config = eval('(' + element.attributes['data-cq'].value + ')');
 			var component = self.components[config.name];
 
-			ReactDOM.render(component, element);
+			ReactDOM.render(React.createElement(component), element);
 		});
 	}
 }
