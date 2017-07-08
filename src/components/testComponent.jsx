@@ -5,7 +5,7 @@ export default class TestComponent extends React.Component {
 		super(props);
 	}
 
-	render () {
+	render() {
 		return 
 			<div>
 				<p>Fuck this shit</p>
