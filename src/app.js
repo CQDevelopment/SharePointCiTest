@@ -5,7 +5,7 @@ import Data from './data.js'
 import Test from './components/testComponent.jsx'
 
 export default class App {
-	constructor(props) {
+	constructor() {
 		var self = this;
 
 		self.components = {};

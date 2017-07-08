@@ -6,9 +6,10 @@ export default class TestComponent extends React.Component {
 	}
 
 	render() {
-		return 
+		return (
 			<div>
 				<p>Fuck this shit</p>
-			</div>;
+			</div>
+		);
 	}
 }
