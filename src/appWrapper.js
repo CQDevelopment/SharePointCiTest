@@ -1,7 +1,8 @@
 require('./style.scss')
 
-import app from './app.js'
+import App from './app.js'
 
 window.cq = window.cq || {};
 
-window.cq.app = new app();
+window.cq.app = new app(document);
+window.cq.app.process();

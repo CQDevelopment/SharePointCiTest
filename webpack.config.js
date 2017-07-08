@@ -25,5 +25,13 @@ module.exports = [{
 	entry: './src/test.js',
 	output: {
 		filename: './out/test.js'
+	},
+	module: {
+		rules: [{
+			test: /\.js.?$/,
+			use: [{
+				loader: "babel-loader"
+			}]
+		}]
 	}
 }];

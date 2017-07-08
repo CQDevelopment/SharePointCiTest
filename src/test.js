@@ -1,6 +1,8 @@
 import assert from 'assert'
-import data from './data.js'
+import App from './app.js'
+import { document } from './mocks.js'
 
+/*
 var data_instance = new data();
 
 describe('App', function() {
@@ -9,4 +11,6 @@ describe('App', function() {
 			assert.equal(4, data_instance.doAddition(1, 3));
 		});
 	});
-});
+});*/
+
+let app = new App(document);
